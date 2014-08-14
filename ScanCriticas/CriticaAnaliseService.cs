@@ -55,7 +55,7 @@ namespace ScanCriticas
 
             ObterListagemDeCritica();
 
-            using (FileStream fs = new FileStream(@"C:\Projeto eSim\Critica.txt", FileMode.Create))
+            using (FileStream fs = new FileStream(@"C:\Projeto eSim\ListagemDeCriticas.txt", FileMode.Create))
             {
                 using (StreamWriter escritor = new StreamWriter(fs, Encoding.GetEncoding("ISO-8859-1")))
                 {
@@ -67,7 +67,7 @@ namespace ScanCriticas
                 }
             }
 
-            Console.WriteLine("Arquivo Criado com Sucesso em Projeto eSim\\Critica.txt");
+            Console.WriteLine("Arquivo Criado com Sucesso em Projeto eSim\\ListagemDeCriticas.txt");
             Console.ReadLine();
 
 
