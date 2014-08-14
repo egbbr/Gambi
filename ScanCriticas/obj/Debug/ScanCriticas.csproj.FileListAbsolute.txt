@@ -1,0 +1,6 @@
+c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas\ScanCriticas\bin\Debug\ScanCriticas.exe.config
+c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas\ScanCriticas\bin\Debug\ScanCriticas.exe
+c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas\ScanCriticas\bin\Debug\ScanCriticas.pdb
+c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas\ScanCriticas\obj\Debug\ScanCriticas.csprojResolveAssemblyReference.cache
+c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas\ScanCriticas\obj\Debug\ScanCriticas.exe
+c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas\ScanCriticas\obj\Debug\ScanCriticas.pdb
