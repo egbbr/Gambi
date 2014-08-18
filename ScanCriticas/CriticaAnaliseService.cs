@@ -4,13 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ScanCriticas
 {
     public class CriticaAnaliseService
     {
+        private GrupoCriticaRepository _grupoCriticaRepository;
+        public GrupoCriticaRepository GrupoCriticaRepository
+        {
+            private get { return _grupoCriticaRepository ?? (_grupoCriticaRepository = new GrupoCriticaRepository()); }
+            set { _grupoCriticaRepository = value; }
+        }
+
         public ArrayList listagemDeCriticas;
         private string localizacaoDoProjetoDeCriticas;
+
         private ArrayList ObterLinhasComDescricaoDaRegra()
         {
             DirectoryInfo diretorio = new DirectoryInfo(localizacaoDoProjetoDeCriticas);
@@ -62,7 +71,17 @@ namespace ScanCriticas
                 {
                     foreach (var critica in listagemDeCriticas)
                     {
-                        escritor.WriteLine(critica);
+                        var criticaDTO = new CriticaAnaliseDTO();
+                        criticaDTO.DescricaoCritica = critica.ToString();
+
+                        var descricaoSplit = Regex.Split(critica.ToString(), "_");
+
+                        criticaDTO.CodigoCritica = descricaoSplit[1];
+                        criticaDTO.DescricaoCritica = descricaoSplit[2];
+                        criticaDTO.GrupoGriticaCritica =
+                            GrupoCriticaRepository.ObterGrupoCriticaPor(criticaDTO.CodigoCritica);
+         
+                        escritor.WriteLine(criticaDTO.CodigoCritica + " - " + criticaDTO.DescricaoCritica + " GRUPO DE CRITICA:" + criticaDTO.GrupoGriticaCritica.Descricao);
                         todalDeCriticas++;
                     }
 

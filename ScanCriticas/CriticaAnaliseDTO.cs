@@ -9,6 +9,8 @@ namespace ScanCriticas
 {
     public class CriticaAnaliseDTO
     {
-        public string DescricaoCritica;
+        public string CodigoCritica { get; set; }
+        public string DescricaoCritica { get; set; }
+        public GrupoCritica GrupoGriticaCritica { get; set; }
     }
 }

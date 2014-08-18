@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="CriticaAnaliseDTO.cs" />
     <Compile Include="CriticaAnaliseService.cs" />
+    <Compile Include="GrupoCritica.cs" />
+    <Compile Include="GrupoCriticaRepository.cs" />
+    <Compile Include="IRepositoryBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
