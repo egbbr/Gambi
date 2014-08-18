@@ -7,3 +7,6 @@ c:\users\esouza.esouzanote-pc\documents\visual studio 2013\Projects\ScanCriticas
 C:\Users\esouza.ESOUZANOTE-PC\Documents\GitHub\Gambi\ScanCriticas\bin\Debug\ScanCriticas.exe.config
 C:\Users\esouza.ESOUZANOTE-PC\Documents\GitHub\Gambi\ScanCriticas\obj\Debug\ScanCriticas.exe
 C:\Users\esouza.ESOUZANOTE-PC\Documents\GitHub\Gambi\ScanCriticas\obj\Debug\ScanCriticas.pdb
+C:\Users\esouza.ESOUZANOTE-PC\Documents\GitHub\Gambi\ScanCriticas\bin\Debug\ScanCriticas.exe
+C:\Users\esouza.ESOUZANOTE-PC\Documents\GitHub\Gambi\ScanCriticas\bin\Debug\ScanCriticas.pdb
+C:\Users\esouza.ESOUZANOTE-PC\Documents\GitHub\Gambi\ScanCriticas\obj\Debug\ScanCriticas.csprojResolveAssemblyReference.cache

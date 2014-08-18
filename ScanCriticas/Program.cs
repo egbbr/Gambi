@@ -12,7 +12,8 @@ namespace ScanCriticas
         {
 
             var service = new CriticaAnaliseService();
-            service.GerarArquivoTXTComCriticas();
+
+            service.GerarArquivoTXTComCriticas(@"C:\Projeto eSim\proj-implantacao\Mongeral.eSim.Implantacao.CriticaService\Criticas");
         }
     }
 }

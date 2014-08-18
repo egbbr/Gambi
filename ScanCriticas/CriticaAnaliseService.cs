@@ -2,20 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters;
-using System.Security.Cryptography.X509Certificates;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ScanCriticas
 {
     public class CriticaAnaliseService
     {
         public ArrayList listagemDeCriticas;
+        private string localizacaoDoProjetoDeCriticas;
         private ArrayList ObterLinhasComDescricaoDaRegra()
         {
-            DirectoryInfo diretorio = new DirectoryInfo(@"C:\Projeto eSim\proj-implantacao\Mongeral.eSim.Implantacao.CriticaService\Criticas");
+            DirectoryInfo diretorio = new DirectoryInfo(localizacaoDoProjetoDeCriticas);
             FileInfo[] Arquivos = diretorio.GetFiles();
             var listaDeArquivosobtidos = new List<string>();
             string sLine = "";
@@ -50,10 +48,13 @@ namespace ScanCriticas
             }
         }
 
-        public void GerarArquivoTXTComCriticas()
+        public void GerarArquivoTXTComCriticas(string localizacaoDoprojeto)
         {
+            localizacaoDoProjetoDeCriticas = localizacaoDoprojeto;
 
             ObterListagemDeCritica();
+            Console.WriteLine("INICIANDO SCAN DAS CRÍTICAS");
+            short todalDeCriticas = 0;
 
             using (FileStream fs = new FileStream(@"C:\Projeto eSim\ListagemDeCriticas.txt", FileMode.Create))
             {
@@ -62,14 +63,22 @@ namespace ScanCriticas
                     foreach (var critica in listagemDeCriticas)
                     {
                         escritor.WriteLine(critica);
+                        todalDeCriticas++;
                     }
 
                 }
             }
 
+            Console.WriteLine("Total de Críticas Identificadas pelo Sistema: {0}",todalDeCriticas);
             Console.WriteLine("Arquivo Criado com Sucesso em Projeto eSim\\ListagemDeCriticas.txt");
+            Console.WriteLine("Abrir arquivo? S/N");
+            var respostausuario = Console.ReadLine();
+            if (respostausuario == "s" || respostausuario == "S")
+            {
+                System.Diagnostics.Process.Start("notepad", @"C:\Projeto eSim\ListagemDeCriticas.txt");
+                return;
+            }
             Console.ReadLine();
-
 
         }
     }
